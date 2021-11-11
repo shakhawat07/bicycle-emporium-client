@@ -1,0 +1,6 @@
+.bicycle-card-background{
+    background-color: #ffffffd1;
+}
+.bicycle-img img:hover{
+    transform: scale(0.9);
+}

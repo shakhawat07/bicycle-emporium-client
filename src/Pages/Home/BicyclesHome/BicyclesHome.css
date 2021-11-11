@@ -1,0 +1,7 @@
+.bicyclesHome-img img{
+    width: '550px';
+    height: '350px';
+}
+.bicyclesHome-img img:hover{
+    transform: scale(1.07);
+}
