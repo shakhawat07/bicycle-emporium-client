@@ -45,7 +45,7 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://image.freepik.com/free-photo/cyclist-resting-silhouette-sunset-active-outdoor-sport-concept_1150-16692.jpg"
+                        src="https://images.unsplash.com/photo-1613351354693-4f627235a5c4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1025&q=80"
                         alt=""
                     />
                     <Carousel.Caption>

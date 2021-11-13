@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Spinner, Table } from 'react-bootstrap';
-import useAuth from '../../hooks/useAuth';
+import { Table } from 'react-bootstrap';
 
 const ManageAllOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
-    const { isLoading } = useAuth();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders`)
+        fetch(`https://hidden-ridge-10259.herokuapp.com/orders`)
             .then(res => res.json())
             .then(data => setMyOrders(data));
     }, [myOrders]);
@@ -16,7 +14,7 @@ const ManageAllOrders = () => {
     const handleDeleteUser = id => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://hidden-ridge-10259.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -35,7 +33,7 @@ const ManageAllOrders = () => {
     const handleOrderStatus = id => {
         const proceed = window.confirm('Are you sure, you want to approve the order?');
         if (proceed) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://hidden-ridge-10259.herokuapp.com/orders/${id}`;
 
             fetch(url, {
                 method: 'PUT',
@@ -48,13 +46,10 @@ const ManageAllOrders = () => {
                 .then(data => {
                     if (data.modifiedCount > 0) {
                         alert('Status Update Successful');
-                        // {isLoading && <Spinner animation="border" variant="danger" /> }
                         // setUser({});
                     }
                 });
         }
-
-
     }
     return (
         <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Dropdown, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
@@ -34,17 +34,12 @@ const Navigation = () => {
                         </NavLink>
                         <NavLink className="nav"
                             activeStyle={activeStyle}
-                            to="/tourCategories">Categories
+                            to="/about">About
                         </NavLink>
                         <NavLink className="nav"
                             activeStyle={activeStyle}
-                            to="/about">About
+                            to="/dashboard">Dashboard
                         </NavLink>
-                        {user?.email && <NavLink className="nav"
-                            activeStyle={activeStyle}
-                            to="/orders">My Orders
-                        </NavLink>
-                        }
                         <NavLink className="nav"
                             activeStyle={activeStyle}
                             to="/login">Login

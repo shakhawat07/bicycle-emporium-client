@@ -4,11 +4,12 @@ import './BicycleDetails.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import useAuth from '../../../hooks/useAuth';
+import Navigation from '../../Shared/Navigation/Navigation';
 
 const BicycleDetails = () => {
     const [bicycles, setBicycles] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/bicycles`)
+        fetch(`https://hidden-ridge-10259.herokuapp.com/bicycles`)
             .then(res => res.json())
             .then(data => setBicycles(data));
     }, []);
@@ -22,7 +23,7 @@ const BicycleDetails = () => {
     const onSubmit = data => {
         // console.log(data);
 
-        axios.post('http://localhost:5000/orders', data)
+        axios.post('https://hidden-ridge-10259.herokuapp.com/orders', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Order processed Successfully');
@@ -32,6 +33,7 @@ const BicycleDetails = () => {
     }
     return (
         <div>
+            <Navigation></Navigation>
             {
                 bicycles.filter(bicycle => bicycle._id === bicycleId).map(filtered =>
                 (

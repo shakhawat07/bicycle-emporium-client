@@ -1,0 +1,14 @@
+.whyChooseUs-container{
+    background-color: #d1d1d186;
+
+}
+.whyChooseUs-container img{
+    border: 2px solid white;
+    border-radius: 3rem;
+}
+button:hover { 
+    transform: scale(1.1);
+} 
+.whyChooseUs-container img:hover{
+    transform: scale(0.95);
+}

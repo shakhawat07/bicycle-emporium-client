@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 import './BicyclesHome.css';
 
 const BicyclesHome = ({ bicycle }) => {
-    const { _id, name, type, cost, suspension, img, description } = bicycle;
+    const { _id, name, cost, img, description } = bicycle;
+    // const { _id, name, type, cost, suspension, img, description } = bicycle;
     const history = useHistory();
 
     const handleBuyNow = () => {

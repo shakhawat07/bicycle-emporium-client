@@ -14,15 +14,15 @@ const useFirebase = () => {
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
-    const registerUser = (email, password, name, history) => {
+    const registerUser = (email, password, name, role, history) => {
         setIsLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 setAuthError('');
-                const newUser = { email, displayName: name };
+                const newUser = { email, displayName: name, role: role };
                 setUser(newUser);
                 // save user to the database
-                saveUser(email, name, 'POST');
+                saveUser(email, name, role, 'POST');
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -73,6 +73,7 @@ const useFirebase = () => {
                 setUser(user);
                 getIdToken(user)
                     .then(idToken => {
+                        // console.log(idToken);
                         setToken(idToken);
                     })
             } else {
@@ -81,13 +82,17 @@ const useFirebase = () => {
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, [])
+    }, [auth])
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(data => setAdmin(data.admin))
-    // }, [user.email])
+    useEffect(() => {
+        fetch(`https://hidden-ridge-10259.herokuapp.com/users/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log('firebaseData', data);
+                setAdmin(data?.admin);
+                console.log('firebase', admin);
+            })
+    }, [user?.email, admin])
 
     const logout = () => {
         setIsLoading(true);
@@ -99,9 +104,9 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
-    const saveUser = (email, displayName, method) => {
-        const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+    const saveUser = (email, displayName, role, method) => {
+        const user = { email, displayName, role };
+        fetch('https://hidden-ridge-10259.herokuapp.com/users', {
             method: method,
             headers: {
                 'content-type': 'application/json'

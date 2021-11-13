@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './Bicycle.css'
 
 const Bicycle = ({ bicycle }) => {
-    const { _id, name, type, cost, suspension, img, description } = bicycle;
+    const { _id, name, type, cost, suspension, img } = bicycle;
     const history = useHistory();
     // console.log(bicycle);
 

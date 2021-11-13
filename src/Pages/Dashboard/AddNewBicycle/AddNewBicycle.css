@@ -1,0 +1,28 @@
+.addBicycle form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e6e6e6ad;
+    font-size: 0.8rem;
+    padding: 20px;
+    margin: 1rem 5rem;
+    border-radius: 3rem;
+}
+.addBicycle form input, textarea{
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+input[type=text],input[type=number], input[type=password], textarea { 
+    width: 40%; 
+    margin: 8px 0;
+    padding: 12px 20px; 
+    display: inline-block; 
+    border: 2px solid black; 
+    border-radius: 3rem;
+    box-sizing: border-box; 
+}
+input[type=submit] {
+    margin-top: 1rem;
+}
