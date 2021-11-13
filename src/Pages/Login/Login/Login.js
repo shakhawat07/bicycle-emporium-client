@@ -1,6 +1,6 @@
 // import Button from '@restart/ui/esm/Button';
 import React, { useState } from 'react';
-import { Alert, Spinner } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
@@ -11,7 +11,7 @@ import './Login.css'
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, isLoading, authError } = useAuth();
+    const { loginUser, isLoading, authError } = useAuth();
     // const { user, loginUser, signInWithGoogle, isLoading } = useAuth();
 
     // const redirect_uri = location.state?.from || '/home';
@@ -29,12 +29,6 @@ const Login = () => {
     const handleLoginSubmit = e => {
         loginUser(loginData.email, loginData.password, location, history);
         e.preventDefault();
-        if (authError === '') {
-            alert('Login successfully!');
-        }
-        else {
-            alert('Mismatched email or password. Login Error ' + { authError });
-        }
 
     }
 
@@ -59,14 +53,6 @@ const Login = () => {
                             <label htmlFor="inputPassword3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Password:</label>
                             <input type="password" onChange={handleOnChange} className="form-control" id="inputPassword3" placeholder="Enter Password" name="password" autoComplete="on" required />
                         </div>
-
-                        {/* {
-                        authError && <div className="row mb-2 text-danger">{authError}</div>
-                    } */}
-                        {/* {
-                        user?.email && <div className="row mb-2 text-danger">User login successfully!</div>
-                    } */}
-
                         <br />
                         {/* submit button  */}
                         <div className="d-flex justify-content-center">
@@ -86,9 +72,6 @@ const Login = () => {
                     </form>
 
                     {isLoading && <Spinner animation="border" variant="danger" />}
-                    {/* {user?.email && <Alert variant="success">Login successfully!</Alert>} */}
-                    {/* {user?.email && alert('User Created successfully!')} */}
-                    {/* {authError && alert({ authError })} */}
                 </div>
             </div>
         </>

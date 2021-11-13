@@ -26,7 +26,7 @@ const AddReview = () => {
                     <input type="text" {...register("name", { required: true, maxLength: 20 })} placeholder="User Name" value={user.displayName} />
                     <input type="email" {...register("email", { required: true })} placeholder="Email" value={user.email} />
                     <textarea {...register("description")} placeholder="Description" />
-                    <input type="text" {...register("star")} placeholder="Rating" />
+                    <input type="number" min="0" max="5" {...register("star", { required: true })} placeholder="Rating (Type 0-5 any integer number)" />
                     <input className="bg-primary text-white w-25 rounded-3" type="submit" />
                 </form>
             </div>

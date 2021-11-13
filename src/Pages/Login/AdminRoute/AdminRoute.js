@@ -5,6 +5,7 @@ import useAuth from '../../../hooks/useAuth';
 
 const AdminRoute = ({ children, ...rest }) => {
     const { user, admin, isLoading } = useAuth();
+    // console.log(admin);
     if (isLoading) {
         return <Spinner animation="border" variant="danger" />
     }

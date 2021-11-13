@@ -42,12 +42,15 @@ const useFirebase = () => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
+                alert('Login successfully!');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
                 setAuthError('');
             })
             .catch((error) => {
                 setAuthError(error.message);
+                alert('Mismatched email or password. Login Error ' + { authError });
+                window.location.reload(false);
             })
             .finally(() => setIsLoading(false));
     }
@@ -114,76 +117,7 @@ const useFirebase = () => {
             body: JSON.stringify(user)
         })
             .then()
-    }
-
-
-
-
-
-    // const handleRegistration = e => {
-    //     setError('');
-    //     e.preventDefault();
-    //     console.log(email, password);
-
-    //     // password regex validation 
-    //     if (password.length < 6) {
-    //         setError('Password Must be at least 6 characters long.')
-    //         return;
-    //     }
-    //     if (!/(?=.*[A-Z].*[A-Z])/.test(password)) {
-    //         setError('Password Must contain 2 upper case');
-    //         return;
-    //     }
-    //     if (!/(?=.*?[0-9])/.test(password)) {
-    //         setError('Password contain at least 1 digit');
-    //         return;
-    //     }
-    //     if (!/(?=.*?[#?!@$%^&*-])/.test(password)) {
-    //         setError('Password contain at least one special character');
-    //         return;
-    //     }
-
-    //     // login or registration validation 
-    //     if (!isLogin) {
-    //         processLogin(email, password);
-    //     }
-    //     else {
-    //         registerNewUser(email, password);
-    //     }
-    // }
-
-    // new registration 
-
-
-
-    // proceed login 
-
-
-    // google sign in 
-
-
-    // const setUserName = () => {
-    //     updateProfile(auth.currentUser, { displayName: name })
-    //         .then(result => { })
-    // }
-
-    // const verifyEmail = () => {
-    //     sendEmailVerification(auth.currentUser)
-    //         .then(result => {
-    //             console.log(result);
-    //         })
-    // }
-
-    // const handleResetPassword = () => {
-    //     sendPasswordResetEmail(auth, email)
-    //         .then(result => { })
-    // }
-
-
-    // observer user state
-
-
-
+    };
     return {
         user,
         admin,

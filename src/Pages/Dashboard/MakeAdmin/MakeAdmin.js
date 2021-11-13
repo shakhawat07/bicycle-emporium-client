@@ -27,9 +27,14 @@ const MakeAdmin = () => {
                     alert('Made Admin successfully!');
                     // setEmail('');
                     console.log(data);
-                    // document.forms('form1').reset();
+                    window.location.reload(false);
                     setSuccess(true);
                 }
+                else {
+                    alert('Email is invalid to make an admin or Already registered as admin!');
+                    window.location.reload(false);
+                }
+
             })
 
         e.preventDefault()

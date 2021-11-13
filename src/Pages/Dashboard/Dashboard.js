@@ -19,14 +19,13 @@ import Payment from './Payment/Payment';
 
 const Dashboard = () => {
     let { path, url } = useRouteMatch();
-    const { admin, logout } = useAuth();
-    console.log('Dashboard', admin);
+    const { user, admin, logout } = useAuth();
     return (
         <div>
             {/* <h1>This is dashboard</h1> */}
             <Navbar bg="black" expand={false}>
                 <Container fluid>
-                    <Navbar.Brand className="text-white fs-2 fw-bolder ms-4" href="#">DashBoard</Navbar.Brand>
+                    <Navbar.Brand className="text-white fs-2 fw-bolder ms-4" href="#">{user.email ? `Dashboard of ${user.displayName}` : 'DashBoard'}</Navbar.Brand>
                     {/* <Nav.Link href="/orders">My Orders</Nav.Link> */}
                     <Navbar.Toggle className="bg-white" aria-controls="offcanvasNavbar" />
 
@@ -37,7 +36,7 @@ const Dashboard = () => {
                     // show="true"
                     >
                         <Offcanvas.Header closeButton>
-                            <Offcanvas.Title id="offcanvasNavbarLabel">DashBoard</Offcanvas.Title>
+                            <Offcanvas.Title id="offcanvasNavbarLabel">{user.email ? `Dashboard of ${user.email}` : 'DashBoard'}</Offcanvas.Title>
                         </Offcanvas.Header>
                         <Offcanvas.Body>
                             <Nav className="justify-content-end flex-grow-1 pe-3">

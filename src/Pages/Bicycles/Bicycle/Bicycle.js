@@ -11,7 +11,8 @@ const Bicycle = ({ bicycle }) => {
     const bicycleImgStyle = {
         width: '400px',
         height: '250px',
-        borderRadius: '15px'
+        borderRadius: '15px',
+        overflow: 'hidden'
     }
 
     const handleBuyNow = () => {

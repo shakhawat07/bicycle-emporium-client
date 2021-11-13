@@ -38,11 +38,11 @@ const Navigation = () => {
                         </NavLink>
                         <NavLink className="nav"
                             activeStyle={activeStyle}
-                            to="/dashboard">Dashboard
+                            to="/login">Login
                         </NavLink>
                         <NavLink className="nav"
                             activeStyle={activeStyle}
-                            to="/login">Login
+                            to="/dashboard">Dashboard
                         </NavLink>
                         {/* dropdown  */}
                         {/* {user?.email &&

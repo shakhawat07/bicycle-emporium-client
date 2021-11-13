@@ -41,7 +41,7 @@ const BicycleDetails = () => {
                         <div className="row m-2 bicycleDetails-container">
                             <div className="col-lg-6 col-md-12 col-sm-12 col-12 d-flex flex-column justify-content-center align-items-center mb-3">
                                 <h1 className="fw-5 my-3 text-primary">{filtered.name}</h1>
-                                <img className="img-fluid border border-secondary rounded p-4" style={{ width: '500px', height: '280px' }} src={filtered.img} alt="" />
+                                <img className="img-fluid border border-secondary rounded p-4" style={{ width: '500px', height: '280px', overflow: 'hidden' }} src={filtered.img} alt="" />
                                 <p className="w-75 mb-1 mt-2"> <span className="fw-bold">Price: </span>$ {filtered.cost}</p>
                                 <p className="w-75 my-1"><span className="fw-bold">Bike Type: </span>{filtered.type}</p>
                                 <p className="w-75 my-1"><span className="fw-bold">Description: </span>{filtered.description}</p>
@@ -54,15 +54,15 @@ const BicycleDetails = () => {
 
                                     <input type="hidden" placeholder="Bicycle Name" defaultValue={filtered.name} {...register("bicycleName")} />
 
-                                    <input defaultValue={user.displayName} {...register("name")} />
+                                    <input defaultValue={user.displayName} {...register("name", { required: true })} />
 
                                     <input defaultValue={user.email} {...register("email", { required: true })} />
 
                                     {errors.email && <span className="error">This field is required</span>}
 
-                                    <input placeholder="Address" defaultValue="" {...register("address")} />
+                                    <input placeholder="Address" defaultValue="" {...register("address", { required: true })} />
 
-                                    <input placeholder="Phone number" defaultValue="" {...register("phone")} />
+                                    <input placeholder="Phone number" defaultValue="" {...register("phone", { required: true })} />
 
                                     <input type="hidden" placeholder="Status" defaultValue="Pending" {...register("status")} />
 
