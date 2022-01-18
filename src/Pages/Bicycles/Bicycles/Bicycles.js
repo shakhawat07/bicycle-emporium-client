@@ -17,7 +17,7 @@ const Bicycles = () => {
             <div className="container-fluid bicycles-container">
                 <h1 className="text-center fw-bold mt-5">Our <span className="text-primary">Bicycles</span></h1>
                 <hr />
-                <div className="row p-5">
+                <div className="row">
                     {
                         bicycles.map(bicycle =>
                             <Bicycle
