@@ -5,7 +5,7 @@ import './MakeAdmin.css';
 
 const MakeAdmin = () => {
     const [email, setEmail] = useState('');
-    const [success, setSuccess] = useState(false);
+    // const [success, setSuccess] = useState(false);
     const { token } = useAuth();
 
     const handleOnBlur = e => {
@@ -26,9 +26,9 @@ const MakeAdmin = () => {
                 if (data.modifiedCount) {
                     alert('Made Admin successfully!');
                     // setEmail('');
-                    console.log(data);
+                    // console.log(data);
                     window.location.reload(false);
-                    setSuccess(true);
+                    // setSuccess(true);
                 }
                 else {
                     alert('Email is invalid to make an admin or Already registered as admin!');

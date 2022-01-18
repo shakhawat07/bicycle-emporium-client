@@ -91,9 +91,9 @@ const useFirebase = () => {
         fetch(`https://hidden-ridge-10259.herokuapp.com/users/${user?.email}`)
             .then(res => res.json())
             .then(data => {
-                console.log('firebaseData', data);
+                // console.log('firebaseData', data);
                 setAdmin(data?.admin);
-                console.log('firebase', admin);
+                // console.log('firebase', admin);
             })
     }, [user?.email, admin])
 

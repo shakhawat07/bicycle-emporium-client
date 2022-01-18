@@ -11,7 +11,7 @@ import './Login.css'
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
-    const { loginUser, isLoading, authError } = useAuth();
+    const { loginUser, isLoading } = useAuth();
     // const { user, loginUser, signInWithGoogle, isLoading } = useAuth();
 
     // const redirect_uri = location.state?.from || '/home';
