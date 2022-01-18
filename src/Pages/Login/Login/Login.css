@@ -1,20 +1,11 @@
-.login-container{
-    background-color: #e6e6e6ad;
-    width: 50%;
-    transform: translate(50%, 0%);
-    /* margin: 2rem 6rem ; */
-    padding: 2rem;
-    border-radius: 3rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.zoom:hover{
+    transform: scale(1.1);
 }
-input[type=text],input[type=email], input[type=password] { 
-     width: 50%; 
-     margin: 8px 0;
-     padding: 12px 20px; 
-     display: inline-block; 
-     border: 2px solid black; 
-     border-radius: 3rem;
-     box-sizing: border-box; 
- }
+.sign-in-google{
+    width: 200px;
+    background-color: #ea4335;
+}
+.sign-in-facebook{
+    width: 200px;
+    background-color: #129af6;
+}

@@ -9,7 +9,7 @@
     flex-direction: column;
     justify-content: center;
 }
-input[type=text],input[type=email], input[type=password] { 
+/* input[type=text],input[type=email], input[type=password] { 
      width: 50%; 
      margin: 8px 0;
      padding: 12px 20px; 
@@ -17,4 +17,4 @@ input[type=text],input[type=email], input[type=password] {
      border: 2px solid black; 
      border-radius: 3rem;
      box-sizing: border-box; 
- }
+ } */

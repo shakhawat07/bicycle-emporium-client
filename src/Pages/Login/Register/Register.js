@@ -38,65 +38,57 @@ const Register = () => {
         <>
             <Navigation></Navigation>
             <div className="container-fluid">
-                <div className="login-container my-5">
-                    <h2 className="text-primary fw-bold mb-4 text-center">Please Register</h2>
-                    {!isLoading &&
-                        <form onSubmit={handleLoginSubmit}>
+                <div className="login-container row">
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-12 d-flex flex-column justify-content-center align-items-center m-0 p-0 d-none d-lg-block">
 
-                            {/* <input type="hidden" onBlur={handleOnBlur} className="form-control" id="inputName3" placeholder="Role" name="role" value="client" /> */}
-                            {/* user name  */}
-                            <div className="row mb-3">
-                                <label htmlFor="inputName" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Username: </label>
-                                <input type="text" onBlur={handleOnBlur} className="form-control" id="inputName" placeholder="Enter Username" name="name" required />
-                            </div>
-                            {/* email  */}
-                            <div className="row mb-3">
-                                <label htmlFor="inputEmail3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Email: </label>
-                                <input onBlur={handleOnBlur} type="email" className="form-control" id="inputEmail3" placeholder="Enter email" name="email" required />
-                            </div>
-                            {/* password  */}
-                            <div className="row mb-3">
-                                <label htmlFor="inputPassword3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Password:</label>
-                                <input type="password" onBlur={handleOnBlur} className="form-control" id="inputPassword1" placeholder="Enter Password" name="password" autoComplete="on" required />
-                            </div>
-                            {/* re-type password  */}
-                            <div className="row mb-3">
-                                <label htmlFor="inputPassword3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Re-Type Password:</label>
-                                <input type="password" onBlur={handleOnBlur} className="form-control" id="inputPassword2" placeholder="Re-Type Password " name="password2" autoComplete="on" required />
-                            </div>
+                        <img className="img-fluid" style={{ width: '700px', height: '600px', overflow: 'hidden' }} src="https://image.freepik.com/free-vector/cyber-data-security-online-concept-illustration-internet-security-information-privacy-protection_1150-37330.jpg" alt="" />
 
-                            {/* <input type="hidden" onBlur={handleOnBlur} className="form-control" id="inputPassword4" placeholder="role" name="role" /> */}
-                            {/* phone  */}
-                            {/* <div className="row mb-3">
-                        <label htmlFor="inputPhone" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Phone: </label>
-                        <input type="text" className="form-control" id="inputPhone" placeholder="Enter Phone" name="phone" />
-                    </div> */}
-                            {/* address  */}
-                            {/* <div className="row mb-3">
-                        <label htmlFor="inputAddress" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Address: </label>
-                        <input type="text" className="form-control" id="inputAddress" placeholder="Enter Address" name="address" />
-                    </div> */}
+                    </div>
 
-                            {/* submit button  */}
-                            {/* <div className="row mb-2 text-danger">{error}</div> */}
-                            <br />
-                            <div className="d-flex justify-content-center">
-                                <button type="submit" className="btn btn-danger rounded">Register</button>
-                            </div>
-                            <br />
-                            <NavLink
-                                style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center' }}
-                                to="/login">
-                                Already Registered? Please Login
-                            </NavLink>
-                            {/* google sign in button  */}
-                            {/* <div className="d-flex justify-content-center mt-2">
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-12 d-flex flex-column justify-content-center align-items-center m-0 p-0 form-container">
+                        <h1 className="text-dark fw-bolder mb-2 mt-4 text-center">Register</h1>
+                        {!isLoading &&
+                            <form onSubmit={handleLoginSubmit}>
+
+                                {/* <input type="hidden" onBlur={handleOnBlur} className="form-control" id="inputName3" placeholder="Role" name="role" value="client" /> */}
+                                {/* user name  */}
+
+                                <div className="row mb-3 g-4 w-75 mx-auto my-3">
+
+                                    {/* user name  */}
+                                    <input type="text" onBlur={handleOnBlur} className="form-control zoom" id="inputName" placeholder="Enter Username" name="name" maxLength={80} required />
+
+                                    {/* email  */}
+                                    <input onBlur={handleOnBlur} type="email" className="form-control zoom" id="inputEmail3" placeholder="Enter Email" name="email" maxLength={62} required />
+
+                                    {/* password  */}
+                                    <input type="password" onBlur={handleOnBlur} className="form-control zoom" id="inputPassword1" placeholder="Enter Password" name="password" maxLength={40} autoComplete="on" required />
+
+                                    {/* re-type password  */}
+                                    <input type="password" onBlur={handleOnBlur} className="form-control zoom" id="inputPassword2" placeholder="Re-Type Password " name="password2" autoComplete="on" required />
+
+                                </div>
+
+                                {/* submit button  */}
+                                {/* <div className="row mb-2 text-danger">{error}</div> */}
+                                <div className="d-flex justify-content-center mt-4">
+                                    <button type="submit" className="btn btn-primary rounded zoom">Register</button>
+                                </div>
+                                <br />
+                                <NavLink
+                                    style={{ textDecoration: 'none', display: 'flex', justifyContent: 'center', fontWeight: 'bolder' }}
+                                    to="/login">
+                                    Already Registered? Please Login
+                                </NavLink>
+                                <br />
+                                {/* google sign in button  */}
+                                {/* <div className="d-flex justify-content-center mt-2">
                         <button className="btn btn-primary" onClick={handleGoogleSignIn}>Google Sign In</button>
                     </div> */}
-                        </form>}
-                    {isLoading && <Spinner animation="border" variant="danger" />}
-                    {/* {user?.email && alert('User Created successfully!')}
-                {authError && alert({ authError })} */}
+                            </form>
+                        }
+                        {isLoading && <Spinner animation="border" variant="danger" />}
+                    </div>
                 </div>
             </div>
         </>
