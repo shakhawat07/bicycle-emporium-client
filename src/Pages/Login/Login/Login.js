@@ -4,14 +4,15 @@ import { Spinner } from 'react-bootstrap';
 import { NavLink, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 
-
-import './Login.css'
+import './Login.css';
 
 const Login = () => {
 
     const [loginData, setLoginData] = useState({});
-    const { loginUser, isLoading } = useAuth();
+    const { loginUser, isLoading, signInWithGoogle } = useAuth();
     // const { user, loginUser, signInWithGoogle, isLoading } = useAuth();
 
     // const redirect_uri = location.state?.from || '/home';
@@ -31,10 +32,28 @@ const Login = () => {
         e.preventDefault();
 
     }
-
     // const handleGoogleSignIn = () => {
-    //     signInWithGoogle(location, history)
-    // }
+    //     signInWithGoogle(history)
+    //         .then(result => {
+    //             setUser(result.user);
+    //             alert('Login successfully!');
+    //             history.replace('/courses');
+    //         })
+    // };
+
+    // const handleFacebookSignIn = () => {
+    //     signInUsingFacebook(history)
+    //         .then(result => {
+    //             setUser(result.user);
+    //             alert('Login successfully!');
+    //             history.replace('/courses');
+    //         })
+    // };
+
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
+    }
 
     return (
         <>
@@ -71,14 +90,19 @@ const Login = () => {
                                 </NavLink>
                                 <br />
 
-
+                                {/* google sign in button  */}
+                                <div className="d-flex justify-content-center mt-2">
+                                    <button className="btn btn-danger sign-in-google" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} /> Google Sign In</button>
+                                </div>
+                                <br />
 
                                 {/* google sign in button  */}
                                 {/* <div className="d-flex justify-content-center mt-2">
                         <button className="btn btn-primary" onClick={handleGoogleSignIn}>Google Sign In</button>
                     </div> */}
-                            </form>
 
+
+                            </form>
                         }
                         {isLoading && <Spinner animation="border" variant="danger" />}
                     </div>

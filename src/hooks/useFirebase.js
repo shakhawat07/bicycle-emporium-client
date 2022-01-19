@@ -60,7 +60,8 @@ const useFirebase = () => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
-                saveUser(user.email, user.displayName, 'PUT');
+                console.log(user);
+                saveUser(user?.email, user?.displayName, 'client', 'PUT');
                 setAuthError('');
                 const destination = location?.state?.from || '/';
                 history.replace(destination);
@@ -109,7 +110,7 @@ const useFirebase = () => {
 
     const saveUser = (email, displayName, role, method) => {
         const user = { email, displayName, role };
-        fetch('https://hidden-ridge-10259.herokuapp.com/users', {
+        fetch(`https://hidden-ridge-10259.herokuapp.com/users`, {
             method: method,
             headers: {
                 'content-type': 'application/json'

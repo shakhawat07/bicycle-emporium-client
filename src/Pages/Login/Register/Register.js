@@ -4,12 +4,18 @@ import { useHistory } from 'react-router';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import Navigation from '../../Shared/Navigation/Navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+
+import './Register.css';
+import { useLocation } from 'react-router-dom/cjs/react-router-dom.min';
 
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
+    const location = useLocation();
     const history = useHistory();
-    const { registerUser, isLoading, authError } = useAuth();
+    const { registerUser, isLoading, authError, signInWithGoogle } = useAuth();
     // const { user, registerUser, isLoading, authError } = useAuth();
 
     const handleOnBlur = e => {
@@ -33,6 +39,9 @@ const Register = () => {
         else {
             alert('Registration Failed. Error ' + { authError });
         }
+    }
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, history)
     }
     return (
         <>
@@ -80,6 +89,12 @@ const Register = () => {
                                     to="/login">
                                     Already Registered? Please Login
                                 </NavLink>
+                                <br />
+
+                                {/* google sign in button  */}
+                                <div className="d-flex justify-content-center mt-2">
+                                    <button className="btn btn-danger sign-in-google" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} /> Google Sign In</button>
+                                </div>
                                 <br />
                                 {/* google sign in button  */}
                                 {/* <div className="d-flex justify-content-center mt-2">
