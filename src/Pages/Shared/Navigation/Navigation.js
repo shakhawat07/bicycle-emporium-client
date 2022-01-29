@@ -32,14 +32,18 @@ const Navigation = () => {
                             activeStyle={activeStyle}
                             to="/bicycles">Bicycles
                         </NavLink>
+
                         <NavLink className="nav"
                             activeStyle={activeStyle}
                             to="/about">About
                         </NavLink>
-                        <NavLink className="nav"
-                            activeStyle={activeStyle}
-                            to="/login">Login
-                        </NavLink>
+                        {!user?.email &&
+                            <NavLink className="nav"
+                                activeStyle={activeStyle}
+                                to="/login">Login
+                            </NavLink>
+                        }
+
                         <NavLink className="nav"
                             activeStyle={activeStyle}
                             to="/dashboard">Dashboard

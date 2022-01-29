@@ -6,12 +6,16 @@
     background-color: #e6e6e6ad;
     font-size: 0.8rem;
     padding: 20px;
-    margin: 1rem 5rem;
-    border-radius: 3rem;
+    margin: 1rem 1rem;
+    /* border-radius: 3rem; */
 }
-.addBicycle form input, textarea{
-    width: 40%;
-    margin-bottom: 10px;
+.addBicycle form input{
+    width: 65%;
+    margin-bottom: 15px;
+}
+.area{
+    width: 65%;
+    margin-bottom: 15px;
 }
 
 /* input[type=text],input[type=number], input[type=password], textarea { 

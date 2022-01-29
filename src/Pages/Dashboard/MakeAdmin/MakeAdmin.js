@@ -46,7 +46,7 @@ const MakeAdmin = () => {
                 <form onSubmit={handleAdminSubmit} name="form1">
                     {/* email  */}
                     <div className="row mb-3">
-                        <label htmlFor="inputEmail3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Email: </label>
+                        {/* <label htmlFor="inputEmail3" className="text-black fw-bold mx-3 col-sm-2 col-form-label mt-3">Email: </label> */}
                         <input type="email" onBlur={handleOnBlur} className="form-control" id="inputEmail3" placeholder="Enter email" name="email" required />
                     </div>
                     <br />

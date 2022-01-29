@@ -1,6 +1,6 @@
 .bicycleDetails-container{
     background-color: #d1d1d186;
-    border-radius: 3rem;
+    /* border-radius: 3rem; */
 }
 .bicycleDetails-container img:hover{
     transform: scale(1.05);

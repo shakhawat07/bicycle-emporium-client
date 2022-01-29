@@ -25,7 +25,8 @@ const Dashboard = () => {
             {/* <h1>This is dashboard</h1> */}
             <Navbar bg="black" expand={false}>
                 <Container fluid>
-                    <Navbar.Brand className="text-white fs-2 fw-bolder ms-4" href="#">{user.email ? `Dashboard of ${user.displayName}` : 'DashBoard'}</Navbar.Brand>
+                    <h1 className="text-white">DashBoard</h1>
+                    {/* <Navbar.Brand className="text-white fs-2 fw-bolder ms-4 container-fluid" href="#">{user.email ? `Dashboard of ${user.email}` : 'DashBoard'}</Navbar.Brand> */}
                     {/* <Nav.Link href="/orders">My Orders</Nav.Link> */}
                     <Navbar.Toggle className="bg-white" aria-controls="offcanvasNavbar" />
 

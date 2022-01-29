@@ -25,9 +25,9 @@ const AddNewBicycle = () => {
                     <input type="text" {...register("type", { required: true })} placeholder="Type (Example: Mountain Bike / Road Bike, etc.)" />
                     <input type="text" {...register("cost", { required: true })} placeholder="Cost is USD" />
                     <input type="text" {...register("suspension", { required: true, maxLength: 20 })} placeholder="Suspension" />
-                    <textarea {...register("description", { required: true })} placeholder="Description" />
+                    <textarea className="area" {...register("description", { required: true })} placeholder="Description" />
                     <input type="text" {...register("img", { required: true })} placeholder="Image URL" />
-                    <input className="bg-primary text-white w-25 rounded-3" type="submit" />
+                    <input className="bg-primary text-white w-25 rounded-3 mt-3" type="submit" />
                 </form>
             </div>
         </div>
